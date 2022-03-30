@@ -22,9 +22,10 @@ THEN I can save my initials and my score
 ## URL's
 
 URL of deployed application:
-
+https://barrygilreath3.github.io/JavaScript-Quiz-App/
 
 URL of GitHub repository:
+https://github.com/barrygilreath3/JavaScript-Quiz-App
 
 ## Comments
 This project is not yet functional as of 3/29/2022.
