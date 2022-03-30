@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <a id="viewhighscores" href="highscores.html">View High Scores</a>
+        <div id="timer">
+            <p>Time: <span id="countdown"></span></p>
+        </div>
+    </header>
+
+    <main>
+        <!-- About -->
+        <div class="about" id="intro">
+            <h1>Coding Quiz Challenge</h1>
+            
+            <p>
+                Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+            </p>
+            
+            <!-- Start Quiz Button -->
+            <button id="startquiz">Start Quiz</button>
+        </div>
+
+        <!-- Questions -->
+        <div class="about" id="quiz">
+            <h1 class="question" id="question">Question</h1>
+            
+            <div class = "choices" id="choice1">
+                <p class="prefix">1. </p>
+                <p class ="choicetext" id="choice1text"></p>
+            </div>
+            <div class = "choices" id="choice2">
+                <p class="1234 prefix">2. </p>
+                <p class ="choicetext" id="choice2text"></p>
+            </div>
+            <div class = "choices" id="choice3">
+                <p class="1234 prefix">3. </p>
+                <p class ="choicetext" id="choice3text"></p>
+            </div>
+            <div class = "choices" id="choice4">
+                <p class="1234 prefix">4. </p>
+                <p class ="choicetext" id="choice4text"></p>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div class="about" id="result">
+            <h2>All done!</h2>
+            
+            <p>
+                Your final score is <span id="score"></span>
+            </p>
+
+            <p>
+                Enter initials: <input type="text" id="initials"> <button>Submit</button>
+            </p>
+
+        </div>
+
+    </main>
+       
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

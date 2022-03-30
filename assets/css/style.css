@@ -1,0 +1,97 @@
+/* Elements */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    font-size: 20px;
+    background-color:darkslateblue;
+    color: white;
+    border-radius: 10px;
+    box-shadow: none;
+    cursor:pointer;
+}
+
+button:hover {
+    background-color:blueviolet;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#viewhighscores {
+    display: flex;
+    align-items: center;
+}
+
+#timer {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* About */
+.about {
+    margin: auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+#quiz {
+    display: none;
+}
+
+/* Questions */
+.question {
+    margin: 20px auto 60px auto;
+    max-width: 500px;
+    text-align: left;
+}
+
+.choices {
+    background-color:darkslateblue;
+    border-radius: 10px;
+    box-shadow: none;
+    cursor:pointer;
+    padding: 5px 0px 5px 10px;
+    max-width: 400px;
+    margin: 10px 0px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.choices:hover {
+    background-color:blueviolet;
+    box-shadow: slategrey;
+}
+
+.prefix {
+    color: white;
+    display:inline;
+}
+
+.choicetext {
+    color: white;
+    display:inline;
+}
+
+/* Result */
+#result {
+    text-align: left;
+    display: none;
+}
+
+/* highscores.html */
+#gameover {
+    max-width: 500px;
+    text-align: left;
+    margin: 100px auto;
+}
+
+.about ol {
+    background-color: rgb(216, 210, 255);
+    margin: 20px;
+}
