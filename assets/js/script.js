@@ -29,7 +29,7 @@ var answerKey = [
         choice2: "HTML",
         choice3: "CSS",
         choice4: "Javascript",
-        answer: choice4,
+        answer: "Javascript"
     },
     {
         question: "What does the acronmym, DOM, stand for?",
@@ -37,7 +37,7 @@ var answerKey = [
         choice2: "Delivery Optical Model",
         choice3: "Document Origin Makeup",
         choice4: "Delivery Object Makeup",
-        answer: choice1,
+        answer: "Document Object Model"
     },
     {
         question: "Which one of the following is NOT a data type?",
@@ -45,7 +45,7 @@ var answerKey = [
         choice2: "Boolean",
         choice3: "Function",
         choice4: "String",
-        answer: choice3,
+        answer: "Function"
     },
     {
         question: "Which of the following is created with square brackets, [], in JavaScript?",
@@ -53,7 +53,7 @@ var answerKey = [
         choice2: "Method",
         choice3: "Object",
         choice4: "Array",
-        answer: choice4,
+        answer: "Array"
     },
     {
         question: "What kind of statements control behavior in JavaScript and determine whether or not pieces of code can run?",
@@ -61,7 +61,7 @@ var answerKey = [
         choice2: "Conditional",
         choice3: "Scoping",
         choice4: "For Loops",
-        answer: choice2,
+        answer: "Conditional"
     },
     {
         question: "________________ let you group a series of statements together to perform a specific task:",
@@ -69,7 +69,7 @@ var answerKey = [
         choice2: "Conditional",
         choice3: "Operators",
         choice4: "Attributes",
-        answer: choice1,
+        answer: "Functions"
     },
     {
         question: "Which of the following is NOT a logical operator?",
@@ -77,7 +77,7 @@ var answerKey = [
         choice2: "||",
         choice3: "!",
         choice4: "//",
-        answer: choice4,
+        answer: "//"
     },
     {
         question: "Which math object rounds the number down to the nearest integer?",
@@ -85,7 +85,7 @@ var answerKey = [
         choice2: "math.random()",
         choice3: "math.floor()",
         choice4: "math.PI()",
-        answer: choice3,
+        answer: "math.floor()"
     },
     {
         question: "What is JQuery?",
@@ -93,7 +93,7 @@ var answerKey = [
         choice2: "A JavaScript LIBRARY",
         choice3: "A JavaScript SPELL-CHECKER",
         choice4: "A JavaScript METHOD",
-        answer: choice2,
+        answer: "A JavaScript LIBRARY"
     },
     {
         question: "When is a function executed?",
@@ -101,16 +101,17 @@ var answerKey = [
         choice2: "When it is called.",
         choice3: "When it is declared and after it is called.",
         choice4: "None of the above",
-        answer: choice2,
+        answer: "When it is called."
     },
 ];
 
+
 var questions = document.querySelector('.question');
 var choices = document.querySelector('.choices');
-var choice1 = document.getElementById('choice1text');
-var choice2 = document.getElementById('choice2text');
-var choice3 = document.getElementById('choice3text');
-var choice4 = document.getElementById('choice4text');
+var choice1 = document.getElementById('choice1');
+var choice2 = document.getElementById('choice2');
+var choice3 = document.getElementById('choice3');
+var choice4 = document.getElementById('choice4');
 var countdown = document.getElementById('countdown');
 
 // Click the start quiz button
@@ -140,12 +141,12 @@ function timer () {
     }, 1000);
 }
 
-function displayHidden (startQuiz) {
+function displayHidden () {
     document.getElementById("quiz").style.display = "block";
     document.getElementById("intro").style.display = "none";
 }
 
-function displayHiddenResult (getInitials) {
+function displayHiddenResult () {
     document.getElementById("result").style.display = "block";
 }
 
@@ -160,41 +161,104 @@ function quiz() {
     timer();
 
     // Call the Questions
-    askQuestions();
+    askQuestions(0);
 
 }
 
-// Variables for Answers
+function askQuestions (i) {
 
-var userChoice = document.querySelector('.choices');
+    userChoice = document.querySelectorAll(".choices");
 
-userChoice.addEventListener("click", calculate);
+    // var i=0;
+    console.log(i);
 
-var correct = 0;
-
-
-function askQuestions () {
-
-    for (i=0; i < 10; i++) {
-        event.preventDefault;
-        question.textContent = answerKey[i].question;
-        choice1.textContent = answerKey[i].choice1;
-        choice2.textContent = answerKey[i].choice2;
-        choice3.textContent = answerKey[i].choice3;
-        choice4.textContent = answerKey[i].choice4;
-
-        return userChoice;
+    if (i === 10) {
+        return;
     }
-        
+
+    question.textContent = answerKey[i].question;
+
+    choice1.textContent = "1. "+answerKey[i].choice1;
+    choice1.setAttribute("data-answer", answerKey[i].choice1);
+    choice1.onclick=function() {
+
+        var userChoice = choice1.getAttribute("data-answer");
+        if (userChoice === answerKey[i].answer) {
+            console.log("correct")
+            i++;
+            return askQuestions(i);
+        }
+        else {
+            i++;
+            return askQuestions(i);
+        }
+
+
+    }
+
+    choice2.textContent = "2. "+answerKey[i].choice2;
+    choice2.setAttribute("data-answer", answerKey[i].choice2);
+    choice2.onclick=function() {
+        var userChoice = choice2.getAttribute("data-answer");
+        if (userChoice === answerKey[i].answer) {
+            console.log("correct")
+            i++;
+            return askQuestions(i);
+        }
+        else {
+            i++;
+            return askQuestions(i);
+        }
+
+
+    }
+    
+    choice3.textContent = "3. "+answerKey[i].choice3;
+    choice3.setAttribute("data-answer", answerKey[i].choice3);
+    choice3.onclick=function() {
+        var userChoice = choice3.getAttribute("data-answer");
+        if (userChoice === answerKey[i].answer) {
+            console.log("correct")
+            i++;
+            return askQuestions(i);
+        }
+        else {
+            i++;
+            return askQuestions(i);
+        }
+
+
+
+    }
+    choice4.textContent = "4. "+answerKey[i].choice4;
+    choice4.setAttribute("data-answer", answerKey[i].choice4);
+    choice4.onclick=function() {
+        var userChoice = choice4.getAttribute("data-answer");
+            console.log(userChoice, answerKey[i])
+        if (userChoice === answerKey[i].answer) {
+            console.log("correct")
+            i++;
+            return askQuestions(i);
+        }
+        else {
+            i++;
+            return askQuestions(i);
+        }
+
+
+    }
+
+
+    // if (userChoice === answerKey.answer) {
+    //     console.log ("correct");
+    // } 
 }
 
-function calculate () {
-    console.log ("testing");
-    if (userChoice === answerKey[i].answer) {
-        correct++;
-        console.log("Hey");
-    }
+function saveAnswers() {
+    localStorage.setItem(questionKey, choice1);
+
 }
+
 
     // WHEN I answer a question, another question is presented.
 
@@ -214,7 +278,6 @@ function calculate () {
         function getInitials () {
             var initials = document.setElementById
 
-            // startQuiz.addEventListener("click", quiz);
         }
 
         // Store High Score to gauge progress compared to peers
