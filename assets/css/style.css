@@ -53,6 +53,7 @@ header {
 
 .choices {
     background-color:darkslateblue;
+    color: white;
     border-radius: 10px;
     box-shadow: none;
     cursor:pointer;
